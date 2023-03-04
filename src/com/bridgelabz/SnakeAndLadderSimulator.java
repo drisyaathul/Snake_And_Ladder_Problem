@@ -24,7 +24,6 @@ public class SnakeAndLadderSimulator {
                 int option = random.nextInt(3) + 1;
                 switch (option) {
                     case 1:
-
                         System.out.println("No Play");
                         System.out.println("The Player stays in the same position: " +(singlePlayerPosition));
                         break;
@@ -42,13 +41,15 @@ public class SnakeAndLadderSimulator {
                         break;
                 }
                 System.out.println();
-                if (singlePlayerPosition<0 || singlePlayerPosition>winningPosition){
+                if (singlePlayerPosition<0) {
                     singlePlayerPosition = 0;
+                } else if (singlePlayerPosition>winningPosition) {
+                    singlePlayerPosition = die;
                 }
             }
         }
         System.out.println("-------------------------------------------");
-        System.out.println("*** The Player reaches the WINNING Position ***");
+        System.out.println("*** The Player gets the Exact WINNING Position of 100 ***");
 
     }
 }
